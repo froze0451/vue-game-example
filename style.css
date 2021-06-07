@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  margin: 1.5rem auto;
+  color: white;
+  font-size: 2rem;
+}
+
+.container {
+  background-color: darksalmon;
+  display: flex;
+  flex-direction: column;
+}
+
+/*interface*/
+.interface {
+  display: flex;
+  flex-direction: row;
+  width: 60rem;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+ul li {
+  width: 2.5rem;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 2rem;
+  border: 0.5rem solid darkred;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+ul.show_time li {
+  width: 5.5rem;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 3rem;
+  border: 0.4rem solid darkblue;
+  margin-top: 4rem;
+  padding: 0.2rem;
+}
+
+/*preview*/
+.preview {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.preview span {
+  background-color: grey;
+}
+
+/*start button*/
+.start-button {
+  width: 10rem;
+  height: 4rem;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  background-color: deepskyblue;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+/*number spot*/
+.number-spot h1 {
+  margin: auto;
+  background-color: grey;
+  width: 10rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/*confirm nubmer*/
+.confirm-number {
+  width: 30rem;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.confirm-number label {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input {
+  width: 12rem;
+  height: 4rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.confirm-number button {
+  font-size: 4rem;
+  background-color: mediumseagreen;
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

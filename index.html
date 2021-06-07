@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="app">
+      <div class="interface">
+        <div class="number-rank">
+          <h2>Выберите разрядность числа</h2>
+          <ul>
+            <li
+              :style="{
+              border: i === numberRank - 2 ? '0.6rem solid green' : '0.5rem solid darkred',
+              color: i === numberRank - 2 ? 'white' : 'black'
+            }"
+              v-for="(item, i) in 4"
+              @click="setRank(i)"
+            >
+              {{ item + 1 }} разряд
+            </li>
+          </ul>
+        </div>
+        <div class="show-time">
+          <h2>Выберите врямя на запоминание числа</h2>
+          <ul class="show_time">
+            <li
+              :style="{
+              border: myInterval === interval ? '0.5rem solid green' : '0.4rem solid darkblue',
+              width: myInterval === interval ? '6.5rem' : '5.5rem',
+              height: myInterval === interval ? '9.5rem' : '8rem',
+              color: myInterval === interval ? 'white' : 'black'
+            }"
+              v-for="(myInterval, i) in intervals"
+              @click="setInterval(i)"
+            >
+              {{ myInterval }} сек
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="preview">
+        <h1>
+          <span>{{ setRankPreview() }}</span> число покажут на
+          <span>{{ interval }} сек</span>
+        </h1>
+      </div>
+      <button class="start-button" @click="startRestartHandler">
+        {{ isEnded ? 'ЗАНОВО!' : 'СТАРТ!'}}
+      </button>
+      <div class="number-spot" v-if="!isEnded">
+        <h1>{{ isStarted ? number : setRankPreview()}}</h1>
+      </div>
+      <div class="confirm-number" v-if="isEnded">
+        <h2>Введите число и нажмите » ↓</h2>
+        <label>
+          <input type="text" v-model="inputValue" />
+          <button @click="checkNumber">»</button>
+        </label>
+        <h2
+          v-if="isChecked"
+          :style="{
+          color: isRight ? 'green' : 'red'
+        }"
+        >
+          {{ isRight ? 'Верно!' : 'Неверно'}}
+        </h2>
+        <h3 v-if="isChecked">
+          Чтобы попробовать снова нажмите кнопку 'заново'
+        </h3>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
